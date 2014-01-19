@@ -32,8 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Foundation layout framework
-gem 'zurb-foundation'
+# Bootstrap framework
+gem 'bootstrap-sass'
 
 group :development do
   gem 'better_errors'
