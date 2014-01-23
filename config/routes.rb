@@ -1,5 +1,6 @@
 Svblet::Application.routes.draw do
   root to: 'static_pages#home'
+  get '/signup', to: 'users#new'
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
   # The priority is based upon order of creation: first created -> highest priority.

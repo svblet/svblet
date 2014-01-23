@@ -27,6 +27,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
+    bcrypt-ruby (3.1.2-x86-mingw32)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -72,7 +74,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.2)
       sprockets-rails (~> 2.0.0)
-    rails_layout (1.0.3)
+    rails_layout (1.0.5)
     railties (4.0.2)
       actionpack (= 4.0.2)
       activesupport (= 4.0.2)
@@ -119,6 +121,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt-ruby
   better_errors
   bootstrap-sass
   coffee-rails (~> 4.0.0)
