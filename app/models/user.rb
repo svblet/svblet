@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
 	# to ensure that non unique emails are also caught at the database level
 	# see migration: add_index_to_users_email
 	before_save { |user| user.email = email.downcase }
+	before_save :create_remember_token
+
+	private
+		def create_remember_token
+			self.remember_token = SecureRandom.urlsafe_base64
+		end
 end
