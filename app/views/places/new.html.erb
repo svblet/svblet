@@ -1,0 +1,23 @@
+<% provide(:title, 'Create a listing') %>
+<h1>Create a listing</h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for([@user, @place]) do |f| %>
+      <%= render 'shared/place_error_messages' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :description %>
+      <%= f.text_area :description, cols: 40, rows: 8 %> 
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+      <%= f.label :price %>
+      <%= f.text_field :price%>
+      <%# TODO: Allow only numbers and certain symbols like "$" in price by changing allowed format? %>
+
+      <%= f.submit "Create my listing", class: "btn btn-large btn-primary"%>
+      <%# TODO: Change to green colour? %>
+    <% end %>
+  </div>
+</div>
+

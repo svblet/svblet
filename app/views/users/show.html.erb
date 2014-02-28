@@ -1,3 +1,5 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
 <%= @user.name %>, <%= @user.email %>
+<%= link_to 'Create a listing', new_user_place_path(@user)%>
+
