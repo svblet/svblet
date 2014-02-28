@@ -20,6 +20,11 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    @places = Place.all
+  end
+
   private
     def place_params
       params.require(:place).permit(:title, :description, :price, :location)
