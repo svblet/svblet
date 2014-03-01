@@ -1,21 +1,19 @@
 class PlacesController < ApplicationController
 
+  before_filter :signed_in_user, only: [:new, :create]
+
   def new
-    if signed_in?
-      @place = Place.new
-    end
+    @place = Place.new
   end
 
   def create
-    if signed_in?
-      @user = current_user
-      @place = @user.places.new(place_params) # TODO: permit other required fields for a place
+    @user = current_user
+    @place = @user.places.new(place_params) # TODO: permit other required fields for a place
 
-      if @place.save
-        redirect_to place_path(@place)
-      else
-        render 'new'
-      end
+    if @place.save
+      redirect_to place_path(@place)
+    else
+      render 'new'
     end
   end
 
