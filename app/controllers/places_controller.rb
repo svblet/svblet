@@ -22,7 +22,7 @@ class PlacesController < ApplicationController
 
   def index
     @user = User.find_by_slug(params[:user_id])
-    @places = Place.all
+    @places = @user.places
   end
 
   private
