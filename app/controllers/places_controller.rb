@@ -1,12 +1,12 @@
 class PlacesController < ApplicationController
 
   def new
-    @user = User.friendly.find(params[:user_id])
+    @user = User.find_by_slug(params[:user_id])
     @place = Place.new
   end
 
   def create
-    @user = User.friendly.find(params[:user_id])
+    @user = User.find_by_slug(params[:user_id])
     @place = @user.places.new(place_params) # TODO: permit other required fields for a place
 
     if @place.save
@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
   end
 
   def index
-    @user = User.friendly.find(params[:user_id])
+    @user = User.find_by_slug(params[:user_id])
     @places = Place.all
   end
 

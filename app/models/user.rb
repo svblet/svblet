@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :places
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :finders]
 
   VALID_NAME_REGEX = /\A[\w\-_]+\z/
   validates :name, presence: true, format: { with: VALID_NAME_REGEX }, length: { maximum: 50 }, uniqueness: true
