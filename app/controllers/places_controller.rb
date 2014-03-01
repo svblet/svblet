@@ -1,18 +1,21 @@
 class PlacesController < ApplicationController
 
   def new
-    @user = User.find_by_slug(params[:user_id])
-    @place = Place.new
+    if signed_in?
+      @place = Place.new
+    end
   end
 
   def create
-    @user = User.find_by_slug(params[:user_id])
-    @place = @user.places.new(place_params) # TODO: permit other required fields for a place
+    if signed_in?
+      @user = current_user
+      @place = @user.places.new(place_params) # TODO: permit other required fields for a place
 
-    if @place.save
-      redirect_to user_place_path(@user, @place)
-    else 
-      render 'new'
+      if @place.save
+        redirect_to place_path(@place)
+      else
+        render 'new'
+      end
     end
   end
 
@@ -21,8 +24,12 @@ class PlacesController < ApplicationController
   end
 
   def index
-    @user = User.find_by_slug(params[:user_id])
-    @places = @user.places
+    if params[:user_id]
+      @user = User.find_by_slug(params[:user_id])
+      @places = @user.places
+    else
+      @places = Place.all
+    end
   end
 
   private
