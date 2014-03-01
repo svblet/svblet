@@ -1,3 +1,42 @@
 // Place all the styles related to the Places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.places {
+	width: 80%;
+
+	/*centering horizontally*/
+	margin: 0 auto;
+}
+
+.places > tbody > tr {
+	border-top: #D1D1D1 solid 1px;
+	border-bottom: #D1D1D1 solid 1px;
+	display:table-row;
+}
+
+.places > tbody > tr > td {
+	padding: 15px 5px;
+	vertical-align: top;
+}
+
+.image > img {
+	margin: 0;
+	margin-left: 10px;
+	height: 60px;
+}
+
+.title_description {
+	width: 60%;
+	height: 60px;
+	overflow: hidden;
+}
+
+.title_description > .title {
+	font-weight: bold;
+}
+
+.price {
+	font-weight: bold;
+	text-align: right;
+}

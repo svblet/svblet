@@ -1,7 +1,6 @@
 <tr>
-	<td><%= place.title %></td>
-	<td><%= place.description %></td>
-	<td><%= place.location %></td>
-	<td><%= place.price %></td>
-	<td><%= link_to 'Show', place_path(place) %></td>
+	<td class="image"><%= render "image", place: place %></td>
+	<td class="title_description"><%= render "title_description", place: place %></td>
+	<td class="location"><%= render "location", place: place %></td>
+	<td class="price"><%= render "price", place: place %></td>
 </tr>
