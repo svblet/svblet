@@ -1,18 +1,18 @@
 class PlacesController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @place = Place.new
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @place = @user.places.new(place_params) # TODO: permit other required fields for a place
 
     if @place.save
       redirect_to user_place_path(@user, @place)
     else 
-      render 'new' # Can change to `render :new` ?
+      render 'new'
     end
   end
 
@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @places = Place.all
   end
 

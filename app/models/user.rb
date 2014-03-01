@@ -2,7 +2,10 @@ class User < ActiveRecord::Base
 	has_secure_password
   has_many :places
 
-	validates :name, presence: true, length: { maximum: 50 }
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
+	validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, 
 				format: { with: VALID_EMAIL_REGEX }, 
