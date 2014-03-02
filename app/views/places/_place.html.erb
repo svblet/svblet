@@ -1,6 +1,9 @@
 <tr>
-	<td class="image"><%= render "image", place: place %></td>
-	<td class="title_description"><%= render "title_description", place: place %></td>
-	<td class="location"><%= render "location", place: place %></td>
-	<td class="price"><%= render "price", place: place %></td>
+    <% if @show_edit_button %>
+        <td class="edit"><%= render "edit_listing", place: place %></td>
+    <% end %>
+    <td class="image"><%= render "image", place: place %></td>
+    <td class="title_description"><%= render "title_description", place: place %></td>
+    <td class="location"><%= render "location", place: place %></td>
+    <td class="price"><%= render "price", place: place %></td>
 </tr>

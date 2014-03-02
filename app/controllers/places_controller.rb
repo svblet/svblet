@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
 
-  before_filter :signed_in_user, only: [:new, :create]
+  before_filter :signed_in_user, only: [:new, :create, :edit]
 
   def new
     @place = Place.new
@@ -17,6 +17,10 @@ class PlacesController < ApplicationController
     end
   end
 
+  def edit
+    @place = Place.find(params[:id])
+  end
+
   def show
     @place = Place.find(params[:id])
   end
@@ -25,6 +29,11 @@ class PlacesController < ApplicationController
     if params[:user_id]
       @user = User.find_by_slug(params[:user_id])
       @places = @user.places
+      @show_edit_button = false
+
+      if signed_in? && is_current_user?(@user)
+        @show_edit_button = true
+      end
     else
       @places = Place.all
     end
