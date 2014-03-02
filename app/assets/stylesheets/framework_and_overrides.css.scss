@@ -29,6 +29,7 @@ img {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
+  border-radius: 2px;
   }
 // apply styles to HTML elements
 // to make views framework-neutral
