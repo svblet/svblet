@@ -1,12 +1,6 @@
 <% if @place.errors.any? %>
 	<div id="error_explanation">
 	<div class="alert alert-error">
-	This form contains <%= pluralize(@place.errors.count, "error") %>.
-	</div>
-		<ul>
-			<% @place.errors.full_messages.each do |msg| %>
-				<li>* <%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
+    Some errors were found. Take a look.
+  </div>
 <% end %>

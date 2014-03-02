@@ -9,9 +9,12 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+// TODO: move dropzone stuff to a 'places#create' specific place so it's only loaded on pages that
+// require it
 //
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require dropzone
 //= require_tree .
