@@ -3,7 +3,9 @@ Svblet::Application.routes.draw do
     resources :places, only: [:index]
   end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :places
+  resources :places do
+    resources :photos
+  end
 
   root to: 'static_pages#home'
   get '/signup', to: 'users#new'

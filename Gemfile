@@ -38,6 +38,9 @@ gem 'bootstrap-sass'
 
 gem 'bootstrap_form'
 
+# File uploading
+gem 'carrierwave'
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'

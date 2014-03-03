@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$progress-green: #5cb85c;
+$success-mark-color: #5cb85c;
+$error-mark-color: #ec686e;
+
 $drop-area-border-size: 3px;
-$drop-area-height: 450px;
+$drop-area-height: 350px;
 
 .places {
     width: 80%;
@@ -64,12 +68,12 @@ $drop-area-height: 450px;
     border: $drop-area-border-size dashed #00ee00;
 }
 
-.dropzone p {
+.dz-message {
     line-height: $drop-area-height;
     text-align: center;
     font-size: 200%;
     color: grey;
-    font-weight: bold;
+    font-weight: 300; // NOTE: a thicker 500 also looks good
 }
 
 .dropzone img {
@@ -123,8 +127,8 @@ $drop-area-height: 450px;
     display: inline-block;
     margin: 17px;
     vertical-align: top;
-    border: 1px solid #acacac;
-    padding: 6px 6px 6px 6px;
+    border: 1px solid #cccccc;
+    padding: 6px;
 }
 .dropzone .dz-preview.dz-file-preview [data-dz-thumbnail],
 .dropzone-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
@@ -135,12 +139,13 @@ $drop-area-height: 450px;
     width: 100px;
     height: 100px;
     position: relative;
-    background: #ebebeb;
+    /*background: #ebebeb;*/
     padding: 5px;
     margin-bottom: 22px;
 }
 .dropzone .dz-preview .dz-details .dz-filename,
 .dropzone-previews .dz-preview .dz-details .dz-filename {
+    display: none; // NOTE: Put this in, in some other way
     overflow: hidden;
     height: 100%;
 }
@@ -154,6 +159,7 @@ $drop-area-height: 450px;
 }
 .dropzone .dz-preview .dz-details .dz-size,
 .dropzone-previews .dz-preview .dz-details .dz-size {
+    display: none;
     position: absolute;
     bottom: -28px;
     left: 3px;
@@ -178,29 +184,28 @@ $drop-area-height: 450px;
 .dropzone-previews .dz-preview .dz-error-mark {
     display: none;
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     font-size: 30px;
     text-align: center;
     right: -10px;
-    top: -10px;
+    top: -37px;
 }
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark {
-    color: #8cc657;
+    color: $success-mark-color;
 }
 .dropzone .dz-preview .dz-error-mark,
 .dropzone-previews .dz-preview .dz-error-mark {
-    color: #ee162d;
+    color: $error-mark-color;
 }
 .dropzone .dz-preview .dz-progress,
 .dropzone-previews .dz-preview .dz-progress {
     position: absolute;
-    top: 100px;
     left: 6px;
     right: 6px;
-    height: 6px;
-    background: #d7d7d7;
+    height: 2px;
+    background: $progress-green;
     display: none;
 }
 .dropzone .dz-preview .dz-progress .dz-upload,

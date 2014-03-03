@@ -2,4 +2,10 @@
 Location: <%= @place.location %>
 Description: <%= @place.description %>
 Price: <%= @place.price %>
+<% for photo in @place.photos %>
+  <% if photo.image_url.to_s %>
+    <%= image_tag photo.image_url.to_s %>
+  <% end %>
+<% end %>
+<%# We use to_s here since there may be no photo.  TODO: Wrap in an if block in case there are no photos; loop through all photos as well %>
 <%= link_to "View listings", "#", class: "btn btn-large" %>

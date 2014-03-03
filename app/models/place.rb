@@ -1,5 +1,7 @@
 class Place < ActiveRecord::Base
   belongs_to :user
+  has_many :photos
+  accepts_nested_attributes_for :photos
   # TODO: Perhaps add validation for length (e.g. minimums, maximums
   validates_presence_of :title
   validates_presence_of :description

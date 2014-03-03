@@ -3,8 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $dropzone = $('#image-dropzone')
 Dropzone.options.imageDropzone= 
-    paramName: "file" # name of file
+    paramName: "photos[image][]" # name of file
     maxFilesize: 2 # in MB
+    uploadMultiple: true
+    addRemoveLinks: true
     accept: (file, done) ->
         done()
+
+Dropzone.autoDiscover = false
 

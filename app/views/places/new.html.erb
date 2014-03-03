@@ -1,32 +1,28 @@
 <% provide(:title, 'Create a listing') %>
 <h1>Create a listing</h1>
 <div class="row">
-  <div class="col-md-6">
-    <h3 id="add-pictures-title">Add some pictures</h3>
-    <form action="/file-upload" id="image-dropzone" class="dropzone dz-clickable">
-      <div class="dz-default dz-message">
-        Drop files here to upload
-      </div>
-      <div class="fallback">
-        <input name="file" type="file" multiple />
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <%= bootstrap_form_for(@place, layout: :horizontal) do |f| %>
-      <%= f.alert_message "Please fix the errors below." %>
+  <%= bootstrap_form_for(@place) do |f| %>
+    <div class="col-md-6">
+      <h3 id="add-pictures-title">Add some pictures</h3>
+      <%= f.fields_for :photos do |p| %>
+        <%#dz-default dz-message%>
+        <%= p.file_field :image, name: "photos[image][]", multiple: true, :id => 'image-dropzone', :class => "dropzone dz-clickable" %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <%#<%= f.alert_message "Please fix the errors below." %>
 
       <%= f.text_field :title, label: "Title", autofocus: true %>
       <%= f.text_area :description, cols: 40, rows: 8, label: "Description" %> 
       <%= f.text_field :location, label: "Location" %>
       <%= f.text_field :price, label: "Price" %>
       <%# TODO: Allow only numbers and certain symbols like "$" in price by changing allowed format? %>
-    </div>
 
-    <div class="form-group">
-      <div class="col-md-8 col-md-offset-2">
-        <%= f.submit "Create my listing", class: "submit btn btn-success"%>
+      <div class="form-group">
+        <div class="col-md-8 col-md-offset-2">
+          <%= f.submit "Create my listing", class: "submit btn btn-success"%>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
