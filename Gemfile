@@ -6,14 +6,15 @@ gem 'rails', '4.0.2'
 # Postgres
 gem 'pg'
 
-gem 'sass-rails', '~> 4.0.0'
 
 # for password hashing (key derivation)
 gem 'bcrypt-ruby'
 
+# TODO: put these below gems into group :assets (this is done in a Railscast episode)
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
+gem 'jquery-fileupload-rails'
+gem 'sass-rails', '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -37,6 +38,7 @@ end
 gem 'bootstrap-sass'
 
 gem 'bootstrap_form'
+
 
 # File uploading
 gem 'carrierwave'

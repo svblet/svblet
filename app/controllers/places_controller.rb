@@ -10,7 +10,7 @@ class PlacesController < ApplicationController
   def create
     @user = current_user
     @place = @user.places.new(place_params) # TODO: permit other required fields for a place
-    @photo = @place.photos.build
+    @photo = @place.photos.build(photo_params)
     # TODO: handle case for no pictures, required fields not provided; 
 
     if @place.save
@@ -50,7 +50,11 @@ class PlacesController < ApplicationController
 
   private
   def place_params
-    params.require(:place).permit(:title, :description, :price, :location, photos_attributes: [:id, :place_id, :image, :image_cache])
+    params.require(:place).permit(:title, :description, :price, :location, photos_attributes: [:id, :place_id, :image])
+  end
+  
+  def photo_params
+    params.require(:photo).permit(:image)
   end
 
 end
