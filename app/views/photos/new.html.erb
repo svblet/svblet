@@ -1,0 +1,21 @@
+<% provide(:title, 'Add some photos') %>
+<div class="row">
+  <div class="col-md-6">
+    <div id="photos">
+    </div>
+    <div class="col-md-6">
+      <h3 id="add-pictures-title">Add some pictures</h3>
+      <%= form_for ([@place, @photo]) do |f| %>
+        <%= f.file_field :photos, name: "photo[image]", multiple: true %>
+        <%= link_to 'Create a listing', place_path(@place)%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+{%=o.name%}
+<div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>

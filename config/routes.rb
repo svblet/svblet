@@ -2,7 +2,9 @@ Svblet::Application.routes.draw do
   resources :users do
     resources :places, only: [:index]
   end
+
   resources :sessions, only: [:new, :create, :destroy]
+
   resources :places do
     resources :photos
   end
@@ -13,6 +15,7 @@ Svblet::Application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

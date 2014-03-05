@@ -4,22 +4,15 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-    @photo = @place.photos.build
+    #@photo = @place.photos.build
   end
 
   def create
     @user = current_user
     @place = @user.places.new(place_params) # TODO: permit other required fields for a place
-    @photo = @place.photos.build(photo_params)
-    # TODO: handle case for no pictures, required fields not provided; 
 
     if @place.save
-      if params[:photos]
-        params[:photos]['image'].each do |img|
-          @photo = @place.photos.create!(:image => img, :place_id => @place.id)
-        end
-      end
-      redirect_to place_path(@place)
+      redirect_to new_place_photo_path(@place)
     else
       render 'new'
     end
@@ -31,7 +24,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
-    @photos = @place.photos.all
+    #@photos = @place.photos.all
   end
 
   def index
@@ -52,7 +45,7 @@ class PlacesController < ApplicationController
   def place_params
     params.require(:place).permit(:title, :description, :price, :location, photos_attributes: [:id, :place_id, :image])
   end
-  
+
   def photo_params
     params.require(:photo).permit(:image)
   end

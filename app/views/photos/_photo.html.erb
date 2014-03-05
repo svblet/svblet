@@ -1,2 +1,6 @@
-<img src="/assets/sample_image.JPG" />
+<%= image_tag @photo.image_url %>
+<%= form_for [@place, @photo], :method => :PATCH do |f| %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+<% end %>
 
