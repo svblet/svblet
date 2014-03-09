@@ -52,12 +52,12 @@ class PlacesController < ApplicationController
   end
 
   private
-  def place_params
-    params.require(:place).permit(:title, :description, :price, :location, :looking_for, photos_attributes: [:id, :place_id, :image])
-  end
+    def place_params
+      params.require(:place).permit(:title, :description, :price, :location, :looking_for, photos_attributes: [:id, :place_id, :image])
+    end
 
-  def photo_params
-    params.require(:photo).permit(:image)
-  end
+    def photo_params
+      params.require(:photo).permit(:image)
+    end
 
 end

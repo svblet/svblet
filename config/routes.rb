@@ -1,6 +1,7 @@
 Svblet::Application.routes.draw do
   resources :users do
     resources :places, only: [:index]
+    resources :alternate_emails
   end
 
   resources :sessions, only: [:new, :create, :destroy]

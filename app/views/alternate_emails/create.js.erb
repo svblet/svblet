@@ -1,0 +1,11 @@
+$('.spinner').hide();
+
+<% if @successful_save %>
+
+    $('.notice').append("<%= escape_javascript(render("shared/bootstrap_alert", alert_type: "success", alert_message: "Successfully added #{@alternate_email.email}")) %>");
+
+<% else %>
+
+    $('.notice').append("<%= escape_javascript(render("shared/bootstrap_alert", alert_type: "danger", alert_message: "Failed to add #{@alternate_email.email}")) %>");
+
+<% end %>

@@ -1,0 +1,2 @@
+module AlternateEmailsHelper
+end
