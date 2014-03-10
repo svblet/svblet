@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309185659) do
+ActiveRecord::Schema.define(version: 20140309215653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20140309185659) do
   end
 
   add_index "alternate_emails", ["user_id"], name: "index_alternate_emails_on_user_id", using: :btree
+
+  create_table "phone_numbers", force: true do |t|
+    t.string   "number"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "phone_numbers", ["user_id"], name: "index_phone_numbers_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.string   "name"

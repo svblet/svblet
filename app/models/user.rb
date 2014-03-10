@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :places
   has_many :alternate_emails
+  has_many :phone_numbers
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]

@@ -1,0 +1,15 @@
+<% provide(:title, 'Add Phone Numbers') %>
+<h1>Add Phone Numbers</h1>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <%= form_tag user_phone_numbers_path(@user), :method => 'post', :id => "phone_number_form" do %>
+            <div class="spinner">Loading...</div>
+            <div class="notice"></div>
+            <div id="phone_number_input_parent">
+                (<%= text_field_tag nil, nil, maxlength: 3, size: 3 %>)-<%= text_field_tag nil, nil, maxlength: 3, size: 3 %>-<%= text_field_tag nil, nil, maxlength: 4, size: 4 %>
+            </div>
+            <%= submit_tag "Add Number", class: "btn btn-large btn-primary" %>
+        <% end %>
+        <%= link_to "Finish Sign Up", @user, class: "btn btn-large btn-primary", style: "display: block" %>
+    </div>
+</div>

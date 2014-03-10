@@ -1,0 +1,11 @@
+// Place all the styles related to the PhoneNumbers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#phone_number_input_parent {
+    text-align: center;
+}
+
+#phone_number_input_parent > input {
+    width: auto;
+}
