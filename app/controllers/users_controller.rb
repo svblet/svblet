@@ -18,6 +18,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_slug(params[:id])
+    @show_edit_button = false
+
+    if signed_in? && is_current_user?(@user)
+      @show_edit_button = true
+    end
   end
 
   private

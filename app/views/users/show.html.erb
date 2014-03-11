@@ -1,4 +1,34 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %></h1>
-<%= @user.name %>, <%= @user.email %>
-<%= link_to 'Create a listing', new_place_path %>
+<div class="row">
+    <div class="user_info_parent">
+        <div class="user_info_name">
+            <h1><%= @user.name %></h1>
+        </div>
+        <div class="user_info_footer">
+            <ul>
+                <li>
+                    <div class="user_info_category">LISTINGS</div>
+                    <div class="user_info_content"><%= @user.places.count %></div>
+                </li>
+                <li>
+                    <div class="user_info_category">EMAIL</div>
+                    <div class="user_info_content"><%= @user.email %></div>
+                </li>
+                <li>
+                    <div class="user_info_category">USER SINCE</div>
+                    <div class="user_info_content"><%= @user.created_at.strftime("%B %Y") %></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="user_listings">
+        <% if @user.places.count == 0 %>
+            <h3>No Listings</h3>
+        <% end %>
+        <ul class="places">
+            <%= render @user.places %>
+        </ul>
+    </div>
+</div>

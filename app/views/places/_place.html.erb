@@ -1,10 +1,12 @@
-<tr>
-    <% if @show_edit_button %>
-        <td class="edit"><%= render "edit_listing", place: place %></td>
-    <% end %>
-    <td class="image"><%= render "image", place: place %></td>
-    <td class="title_description"><%= render "title_description", place: place %></td>
-    <td class="location"><%= render "location", place: place %></td>
-    <td class="looking_for">Looking for <%= place.looking_for %></td>
-    <td class="price"><%= render "price", place: place %></td>
-</tr>
+<li>
+    <ul>
+        <% if @show_edit_button %>
+            <li class="edit"><%= render "places/edit_listing", place: place %></li>
+        <% end %>
+        <li class="image"><%= render "places/image", place: place %></li>
+        <li class="title_description"><%= render "places/title_description", place: place %></li>
+        <li class="location"><%= render "places/location", place: place %></li>
+        <li class="looking_for">Looking for <%= place.looking_for %></li>
+        <li class="price"><%= render "places/price", place: place %></li>
+    </ul>
+</li>

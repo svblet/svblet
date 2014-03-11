@@ -1,3 +1,54 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin module_defaults() {
+    border: solid #A1A1A1 1px;
+    border-radius: 8px;
+}
+
+.user_info_parent {
+    @include module_defaults();
+    margin-bottom: 20px;
+}
+
+.user_info_name {
+    padding: 12px 30px;
+}
+
+.user_info_name > h1 {
+    text-align: left;
+}
+
+.user_info_footer {
+    height: auto;
+    border-top: solid #A1A1A1 1px;
+    padding: 0 20px;
+}
+
+.user_info_footer > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user_info_footer > ul > li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.user_info_category {
+    color: #808080;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.user_info_content {
+    font-size: 18px;
+}
+
+.user_listings {}
+
+.user_listings h3 {
+    text-align: center;
+}

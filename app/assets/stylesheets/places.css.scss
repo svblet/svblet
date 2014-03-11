@@ -9,30 +9,57 @@ $error-mark-color: #ec686e;
 $drop-area-border-size: 3px;
 $drop-area-height: 350px;
 
-.places {
-    width: 80%;
+@mixin module_defaults() {
+    border: solid #A1A1A1 1px;
+    border-radius: 8px;
+}
 
+.places {
     /*centering horizontally*/
     margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
 }
 
-.places > tbody > tr {
-    border-top: #D1D1D1 solid 1px;
-    border-bottom: #D1D1D1 solid 1px;
-    display:table-row;
+.places > li {
+    @include module_defaults();
+    margin-bottom: 10px;
 }
 
-.places > tbody > tr > td {
-    padding: 15px 5px;
+.places ul {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0;
+    text-align: center;
+}
+
+.places ul > li {
+    display: inline-block;
+    padding: 15px 1%;
     vertical-align: top;
+    text-align: left;
+}
+
+/*Aim is to add up to 100%: horizontal padding for each li element is 2%
+There are 6 li elements, so total horizontal padding is 12%
+The image is 8%
+The title and description is 50%
+The location is 10%
+The looking for count is 10%
+The price is 10%
+
+Did not account for edit button, but apparently there's still lots of space*/
+
+.image {
+    width: 8%;
 }
 
 .image > img {
-    height: 60px;
+    width: 100%;
 }
 
 .title_description {
-    width: 60%;
+    width: 50%;
     height: 60px;
     overflow: hidden;
 }
@@ -41,9 +68,18 @@ $drop-area-height: 350px;
     font-weight: bold;
 }
 
+.location {
+    width: 10%;
+}
+
+.looking_for {
+    width: 10%;
+}
+
 .price {
+    width: 10%;
     font-weight: bold;
-    text-align: right;
+    text-align: right !important;
 }
 
 // Form styles
