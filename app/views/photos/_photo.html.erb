@@ -1,4 +1,4 @@
-<%= image_tag @photo.image_url %>
+<%= image_tag @photo.thumbnail %>
 <%= form_for [@place, @photo], :method => :PATCH do |f| %>
   <%= f.label :caption %>
   <%= f.text_field :caption %>

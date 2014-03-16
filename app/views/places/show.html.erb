@@ -3,8 +3,6 @@ Location: <%= @place.location %>
 Description: <%= @place.description %>
 Price: <%= @place.price %>
 <% for photo in @place.photos %>
-  <% if photo.image_url.to_s %>
-    <%= image_tag photo.image_url.to_s %>
-    <%= photo.caption %>
-  <% end %>
+  <%= image_tag photo.thumbnail %>
+  <%= photo.caption %>
 <% end %>

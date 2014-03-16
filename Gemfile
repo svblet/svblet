@@ -10,7 +10,6 @@ gem 'pg'
 # for password hashing (key derivation)
 gem 'bcrypt-ruby'
 
-# TODO: put these below gems into group :assets (this is done in a Railscast episode)
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-fileupload-rails'
@@ -24,6 +23,7 @@ gem 'jquery-rails'
 
 # Nicer looking URLs
 gem 'friendly_id'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -39,9 +39,12 @@ gem 'bootstrap-sass'
 
 gem 'bootstrap_form'
 
-
 # File uploading
 gem 'carrierwave'
+
+# Generate thumbnails
+gem 'dragonfly', '~> 1.0.3'
+# TODO: for caching: http://markevans.github.io/dragonfly/rails/#caching
 
 group :development do
   gem 'better_errors'
