@@ -9,7 +9,10 @@
       <%= f.text_area :description, cols: 40, rows: 8, label: "Description" %> 
       <%= f.text_field :location, label: "Location" %>
       <%= f.number_field :looking_for, label: "How many people are you looking for?" %>
-      <%= f.number_field :price, label: "Price" %>
+      <div id="price-input-field-parent">
+        <%= f.label :price, id:"price-label" %>
+        $<%= f.number_field :price, :step => 'any', hide_label: true %>
+      </div>
       <%# TODO: Allow only numbers and certain symbols like "$" in price by changing allowed format? %>
 
       <div class="form-group">

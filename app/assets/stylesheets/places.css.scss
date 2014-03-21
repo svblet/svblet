@@ -92,6 +92,26 @@ Did not account for edit button, but apparently there's still lots of space*/
     margin-bottom: 20px;
 }
 
+#price-input-field-parent {
+    display: inline-block;
+    width: 50%;
+}
+
+#price-input-field-parent input {
+    display: inline-block;
+    width: 60%;
+    margin-left: 8px;    
+}
+
+#price-input-field-parent .form-group {
+    display: inline-block;
+}
+
+#price-label {
+    margin-right: 20px;
+    display: inline-block;
+}
+
 .dropzone {
     border: $drop-area-border-size dashed #ddd;
     width: 80%;
