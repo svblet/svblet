@@ -9,6 +9,7 @@
 
 .user_info_parent {
     @include module_defaults();
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 

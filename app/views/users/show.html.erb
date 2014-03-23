@@ -23,12 +23,10 @@
     </div>
 </div>
 <div class="row">
-    <div class="user_listings">
+    <div class="user_listings" id="listings-parent">
         <% if @user.places.count == 0 %>
             <h3>No Listings</h3>
         <% end %>
-        <ul class="places-list">
-            <%= render @user.places %>
-        </ul>
+        <%= render @user.places %>
     </div>
 </div>

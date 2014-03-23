@@ -47,10 +47,6 @@ input#searchbar.form-control {
 // to make views framework-neutral
 #main {
   @extend .container;
-  width: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
-  background-color: #fafafa;
 }
 
 section {
@@ -59,9 +55,7 @@ section {
 }
 
 .row {
-  width: 1170px;
   margin: 0 auto;
-  margin-top: 50px;
 }
 
 /* mixins, variables, etc. */
@@ -77,7 +71,7 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 body {

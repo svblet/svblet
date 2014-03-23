@@ -14,32 +14,6 @@ $drop-area-height: 350px;
     border-radius: 8px;
 }
 
-.places-list {
-    /*centering horizontally*/
-    margin: 0 auto;
-    list-style-type: none;
-    padding: 0;
-}
-
-.places-list-element {
-    @include module_defaults();
-    margin-bottom: 10px;
-}
-
-.places-list-element > ul {
-    list-style-type: none;
-    padding: 0; 
-    margin: 0;
-    text-align: center;
-}
-
-.places-list-element > ul > li {
-    display: inline-block;
-    padding: 15px 1%;
-    vertical-align: top;
-    text-align: left;
-}
-
 #place_looking_for {
     width: 14%;
 }
@@ -98,46 +72,41 @@ $drop-area-height: 350px;
     color: grey;
 }
 
-/*Aim is to add up to 100%: horizontal padding for each li element is 2%
-There are 6 li elements, so total horizontal padding is 12%
-The image is 8%
-The title and description is 50%
-The location is 10%
-The looking for count is 10%
-The price is 10%
+#listings-parent > .row {
+    margin-bottom: 30px;
+    padding: 10px 0px;
+    @include module_defaults();
+}
 
-Did not account for edit button, but apparently there's still lots of space*/
+// #listings-parent > .row > div:not(:last-child) {
+//     border-right: 1px solid #BBB;
+// }
+
+#listings-parent > .row > div {
+    height: 60px;
+    margin: 5px 0px;
+}
 
 .image {
-    width: 8%;
+    overflow: hidden;
 }
 
 .image > img {
-    width: 100%;
+    width: 50%;
 }
 
 .title_description {
-    width: 50%;
-    height: 60px;
     overflow: hidden;
 }
 
 .title_description > .title {
     font-weight: bold;
-}
-
-.location {
-    width: 10%;
-}
-
-.looking_for {
-    width: 10%;
+    font-size: 16px;
 }
 
 .price {
-    width: 10%;
     font-weight: bold;
-    text-align: right !important;
+    text-align: center;
 }
 
 // Form styles

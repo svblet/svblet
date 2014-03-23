@@ -2,17 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#hero-with-bg {
+.static_pages.home {
   // Background from: http://bosguydotcom.files.wordpress.com/2012/05/golden-gate-night.jpg
   // Blur added with pixlr's gaussian blur set to max
   // Hopefully we can legally use this
   background: transparent url(/assets/golden-gate-night-blur.jpg) repeat center top;
   background-size: cover;
-  height: 100%;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0px;
 }
 
 #home-intro {
