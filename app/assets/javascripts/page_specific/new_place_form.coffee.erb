@@ -1,6 +1,12 @@
 ready = ->
   if $("body").hasClass("places") and $("body").hasClass("new")
-    initialize()
+    initialize_google_places_autocomplete()
+    $("#place_title").keyup ->
+      document.getElementById("title_characters_remaining").innerHTML = <%= Place::MAX_TITLE_LENGTH %> - @value.length
+      return
+    $("#place_description").keyup ->
+      document.getElementById("desc_characters_remaining").innerHTML = <%= Place::MAX_DESCRIPTION_LENGTH %> - @value.length
+      return
     # prevent locations search input field to submit form
     $("#autocomplete").keypress (e) ->
       k = e.keyCode or e.which
@@ -21,7 +27,7 @@ componentForm =
   # country: "long_name"
   # postal_code: "short_name"
 
-initialize = ->
+initialize_google_places_autocomplete = ->
   autocomplete = new google.maps.places.Autocomplete((document.getElementById("autocomplete")), types: ["geocode"])
 
   componentRestrictions = country: "ca"

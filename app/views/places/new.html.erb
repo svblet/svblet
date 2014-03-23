@@ -6,11 +6,13 @@
       <div class="form-group">
         <%= f.label :title %>
         <%= errors_for @place, :title %>
-        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+        <%= f.text_field :title, autofocus: true, class: 'form-control', maxlength: Place::MAX_TITLE_LENGTH %>
+        <div class="characters_remaining_container"><span id="title_characters_remaining"><%= Place::MAX_TITLE_LENGTH %></span> characters remaining</div>
 
         <%= f.label :description %>
         <%= errors_for @place, :description %>
-        <%= f.text_area :description, cols: 40, rows: 8, class: 'form-control' %>
+        <%= f.text_area :description, cols: 40, rows: 8, class: 'form-control', maxlength: Place::MAX_DESCRIPTION_LENGTH %>
+        <div class="characters_remaining_container"><span id="desc_characters_remaining"><%= Place::MAX_DESCRIPTION_LENGTH %></span> characters remaining</div>
       </div>
 
       <div class="form-group">
@@ -31,13 +33,13 @@
       <div class="form-group">
         <%= f.label 'How many people are you looking for?' %>
         <%= errors_for @place, :looking_for %>
-        <%= f.text_field :looking_for, class: 'form-control' %>
+        <%= f.number_field :looking_for, :step => 'any', class: 'form-control', min: 1 %>
       </div>
 
       <div class="form-group" id="price-input-field-parent">
         <%= f.label :price, id:"price-label" %>
         <%= errors_for @place, :price %>
-        $<%= f.number_field :price, :step => 'any', class: 'form-control' %>
+        <div>$<%= f.number_field :price, :step => 'any', class: 'form-control', min: 0 %></div>
       </div>
 
       <%= f.submit "Create my listing", class: "submit btn btn-success"%>
