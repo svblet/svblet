@@ -37,6 +37,9 @@ class PlacesController < ApplicationController
     #@photos = @place.photos.all
   end
 
+  def google_places_api_test
+  end
+
   def index
     if params[:user_id]
       @user = User.find_by_slug(params[:user_id])
@@ -53,7 +56,7 @@ class PlacesController < ApplicationController
 
   private
     def place_params
-      params.require(:place).permit(:title, :description, :price, :location, :looking_for, photos_attributes: [:id, :place_id, :image])
+      params.require(:place).permit(:title, :description, :price, :province, :city, :street_number, :street_name, :looking_for, photos_attributes: [:id, :place_id, :image])
     end
 
     def photo_params

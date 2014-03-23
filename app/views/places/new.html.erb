@@ -1,25 +1,46 @@
 <% provide(:title, 'Create a listing') %>
 <h1>Create a listing</h1>
 <div class="row">
-  <%= bootstrap_form_for(@place) do |f| %>
-    <div class="col-md-offset-3 col-md-6">
-      <%= f.alert_message "Please fix the errors below." %>
+  <div class="col-md-offset-3 col-md-6">
+    <%= form_for(@place) do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= errors_for @place, :title %>
+        <%= f.text_field :title, autofocus: true, class: 'form-control' %>
 
-      <%= f.text_field :title, label: "Title", autofocus: true %>
-      <%= f.text_area :description, cols: 40, rows: 8, label: "Description" %> 
-      <%= f.text_field :location, label: "Location" %>
-      <%= f.number_field :looking_for, label: "How many people are you looking for?" %>
-      <div id="price-input-field-parent">
-        <%= f.label :price, id:"price-label" %>
-        $<%= f.number_field :price, :step => 'any', hide_label: true %>
+        <%= f.label :description %>
+        <%= errors_for @place, :description %>
+        <%= f.text_area :description, cols: 40, rows: 8, class: 'form-control' %>
       </div>
-      <%# TODO: Allow only numbers and certain symbols like "$" in price by changing allowed format? %>
 
       <div class="form-group">
-        <div class="col-md-8 col-md-offset-2">
-          <%= f.submit "Create my listing", class: "submit btn btn-success"%>
-        </div>
+        <label>Location Search</label>
+        <%= text_field_tag '', '', class: 'form-control', placeholder: 'Enter your address', id: 'autocomplete' %>
       </div>
-    </div>
-  <% end %>
+
+      <div class="form-group" id="address-inputs">
+        <%= f.label 'Address' %>
+        <%= errors_for @place, :city %>
+        <%= errors_for @place, :province %>
+        <%= f.text_field :street_number, id: "street_number", placeholder: "Street #", readonly: 'readonly', class: 'form-control' %>
+        <%= f.text_field :street, id: "route", placeholder: "Street name", readonly: 'readonly', class: 'form-control' %>
+        <%= f.text_field :city, id: "locality", placeholder: "City", readonly: 'readonly', class: 'form-control' %>
+        <%= f.text_field :province, id: "administrative_area_level_1", placeholder: "Province", readonly: 'readonly', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label 'How many people are you looking for?' %>
+        <%= errors_for @place, :looking_for %>
+        <%= f.text_field :looking_for, class: 'form-control' %>
+      </div>
+
+      <div class="form-group" id="price-input-field-parent">
+        <%= f.label :price, id:"price-label" %>
+        <%= errors_for @place, :price %>
+        $<%= f.number_field :price, :step => 'any', class: 'form-control' %>
+      </div>
+
+      <%= f.submit "Create my listing", class: "submit btn btn-success"%>
+    <% end %>
+  </div>
 </div>

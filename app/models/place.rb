@@ -5,8 +5,10 @@ class Place < ActiveRecord::Base
   # TODO: Perhaps add validation for length (e.g. minimums, maximums
   validates :title, presence: true
   validates :description, presence: true
-  validates :location, presence: true
   validates :looking_for, presence: true
   validates :price, presence: true # Validate format; but consider options; e.g. dollar signs allowed, allowing a price range, etc.
   # TODO: Perhaps later add "[Please] contact buyer" option that is inserted into textfield upon button click
+
+  validates :city, presence: true
+  validates :province, presence: true
 end

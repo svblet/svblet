@@ -1,0 +1,8 @@
+<% if model_with_errors.errors.any? %>
+    <% model_with_errors.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= content_tag :div, msg %>
+        </div>
+    <% end %>
+<% end %>
