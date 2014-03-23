@@ -1,0 +1,12 @@
+<li class="places-list-element">
+    <ul>
+        <% if @show_edit_button %>
+            <li class="edit"><%= render "places/edit_listing", place: place %></li>
+        <% end %>
+        <li class="image"><%= render "places/image", place: place %></li>
+        <li class="title_description"><%= render "places/title_description", place: place %></li>
+        <li class="location"><%= render "places/location", place: place %></li>
+        <li class="looking_for">Looking for <%= place.looking_for %></li>
+        <li class="price"><%= render "places/price", place: place %></li>
+    </ul>
+</li>
