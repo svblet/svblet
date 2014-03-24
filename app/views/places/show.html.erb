@@ -4,15 +4,51 @@
 <p id="place-header-location" class="clear-both"><%= @place.city %>, <%= @place.province %> · 90210</p>
 <hr class="clear-both">
 <div class="row" id="main-place-info-container">
-  <div class="col-md-2" id="place-info-box">
+
+  <%# Refer to http://getbootstrap.com/javascript/#tabs-usage %>
+
+  <div class="col-md-8">
+    <ul class="nav nav-tabs" id="place-tab-bar">
+      <li class="active"><a href="#home" data-toggle="tab">Description</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <p><%= @place.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-md-offset-1" id="place-info-box">
     <div id="place-price">
       <%= number_to_currency(@place.price) %>
       <%# TODO: superscript the cents? (and remove decimal point) %>
     </div>
-  </div>
-
-  <div class="col-md-10" id="place-description">
-    Description: <%= @place.description %>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>Bedrooms: </td>
+          <td class="value">2</td>
+        </tr>
+        <tr>
+          <td>Bathrooms: </td>
+          <td class="value">4</td>
+        </tr>
+        <tr>
+          <td>City: </td>
+          <td class="value"><%= @place.city %></td>
+        </tr>
+        <tr>
+          <td>Postal Code: </td>
+          <td class="value">90210</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button class="btn btn-large btn-default">Contact seller</button>
+      </div>
+</div>
   </div>
 
 </div>

@@ -7,7 +7,8 @@
 $progress-green: #5cb85c;
 $success-mark-color: #5cb85c;
 $error-mark-color: #ec686e;
-$light-gray: #f8f8f8;
+$light-gray: #fdfdfd;
+$light-blue-link-text: #428bca;
 
 $drop-area-border-size: 3px;
 $drop-area-height: 350px;
@@ -31,16 +32,21 @@ $drop-area-height: 350px;
   font-family: Bitter, Arial, serif;
   font-size: 2.5em;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   vertical-align: text-bottom;
 }
 
 #place-header-location {
   margin-bottom: 0px;
-  font-weight: 500;
+  font-weight: 400;
+  color: $light-blue-link-text 
 }
 
 #place-description {
+}
+
+#place-tab-bar {
+  margin-bottom: 15px;
 }
 
 #place-info-box {
@@ -48,6 +54,13 @@ $drop-area-height: 350px;
   border-radius: 2px;
   background-color: $light-gray;
   padding: 15px;
+}
+
+td.value {
+  border-left: 0;
+  font-weight: bold;
+  text-align: right;
+  word-wrap: break-word;
 }
 
 #main-place-info-container {
