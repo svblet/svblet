@@ -1,6 +1,22 @@
-<h1><%= @place.title %></h1>
-Description: <%= @place.description %>
-Price: <%= @place.price %>
+<div class="place-header-container">
+  <h1 id="place-title"><%= @place.title %></h1>
+</div>
+<p id="place-header-location" class="clear-both"><%= @place.city %>, <%= @place.province %> · 90210</p>
+<hr class="clear-both">
+<div class="row" id="main-place-info-container">
+  <div class="col-md-2" id="place-info-box">
+    <div id="place-price">
+      <%= number_to_currency(@place.price) %>
+      <%# TODO: superscript the cents? (and remove decimal point) %>
+    </div>
+  </div>
+
+  <div class="col-md-10" id="place-description">
+    Description: <%= @place.description %>
+  </div>
+
+</div>
+
 <% for photo in @place.photos %>
   <%= image_tag photo.thumbnail %>
   <%= photo.caption %>
