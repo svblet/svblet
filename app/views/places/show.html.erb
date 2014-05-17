@@ -7,19 +7,7 @@
 
   <%# Refer to http://getbootstrap.com/javascript/#tabs-usage %>
 
-  <div class="col-md-8">
-    <ul class="nav nav-tabs" id="place-tab-bar">
-      <li class="active"><a href="#home" data-toggle="tab">Description</a></li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div class="tab-pane active" id="home">
-        <p><%= @place.description %></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3 col-md-offset-1" id="place-info-box">
+  <div class="col-md-3" id="place-info-box">
     <div id="place-price">
       <%= number_to_currency(@place.price) %>
       <%# TODO: superscript the cents? (and remove decimal point) %>
@@ -48,9 +36,20 @@
       <div class="col-md-6 col-md-offset-3">
         <button class="btn btn-large btn-default">Contact seller</button>
       </div>
-</div>
+    </div>
   </div>
+  <div class="col-md-8 col-md-offset-1">
+    <ul class="nav nav-tabs" id="place-tab-bar">
+      <li class="active"><a href="#home" data-toggle="tab">Description</a></li>
+    </ul>
 
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <p><%= @place.description %></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <% for photo in @place.photos %>
