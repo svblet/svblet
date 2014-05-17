@@ -1,0 +1,6 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: svblet_production
+  pool: 5
+  timeout: 5000
