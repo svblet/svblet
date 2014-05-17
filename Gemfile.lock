@@ -58,6 +58,9 @@ GEM
       rack
     erubis (2.7.0)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
     hike (1.2.3)
@@ -151,6 +154,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   dragonfly (~> 1.0.3)
+  figaro
   friendly_id
   jbuilder (~> 1.2)
   jquery-fileupload-rails

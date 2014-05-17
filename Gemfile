@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -46,6 +44,9 @@ gem 'carrierwave'
 # Generate thumbnails
 gem 'dragonfly', '~> 1.0.3'
 # TODO: for caching: http://markevans.github.io/dragonfly/rails/#caching
+
+# Environment vars
+gem 'figaro'
 
 group :development do
   gem 'better_errors'
