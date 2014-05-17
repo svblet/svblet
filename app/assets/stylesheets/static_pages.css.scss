@@ -6,7 +6,7 @@
   // Background from: http://bosguydotcom.files.wordpress.com/2012/05/golden-gate-night.jpg
   // Blur added with pixlr's gaussian blur set to max
   // Hopefully we can legally use this
-  background: transparent url(/assets/golden-gate-night-blur.jpg) repeat center top;
+  background: transparent image-url("golden-gate-night-blur.jpg") repeat center top;
   background-size: cover;
 }
 
